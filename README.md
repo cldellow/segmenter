@@ -1,5 +1,10 @@
 # segmenter
 
+[![Build Status](https://travis-ci.org/cldellow/segmenter.svg?branch=master)](https://travis-ci.org/cldellow/segmenter)
+[![codecov](https://codecov.io/gh/cldellow/segmenter/branch/master/graph/badge.svg)](https://codecov.io/gh/cldellow/segmenter)
+[![Maven Central](https://img.shields.io/maven-central/v/com.cldellow/segmenter.svg)](https://mvnrepository.com/artifact/com.cldellow/segmenter)
+
+
 Segment short strings into words.
 
 ## Usage
