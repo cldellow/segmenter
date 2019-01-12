@@ -25,6 +25,7 @@ public class SegmenterTest {
         Result rv = segmenter.segment("thedogjumped", 5, 5, 0);
         assertEquals(1, rv.getHits());
         assertEquals("the dog jumped", rv.getPhrase(0));
+        assertEquals(0.001, rv.getProbability(0), 0.00001);
     }
 
     @Test
@@ -122,8 +123,10 @@ public class SegmenterTest {
         probs.put("ate" , 0.5);
 
         Segmenter segmenter = new Segmenter(probs);
-        Result rv = segmenter.segment("thedogate", 5, 15, 0.001);
+        Result rv = segmenter.segment("thedogate", 3, 2, 0.001);
 
+        assertEquals(2, rv.getHits());
+        assertEquals(37, rv.getTotalHits());
         assertEquals("the dog ate", rv.getPhrase(0));
     }
 }

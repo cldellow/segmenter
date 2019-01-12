@@ -43,6 +43,11 @@ public class Result {
         return hits > maxHits ? maxHits : hits;
     }
 
+    public int getTotalHits() {
+        return hits;
+    }
+
+
     public double getProbability(int i) {
         return ranks[i];
     }
