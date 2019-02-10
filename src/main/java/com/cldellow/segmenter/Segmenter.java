@@ -9,12 +9,21 @@ import java.util.List;
 public class Segmenter {
     private AhoCorasickDoubleArrayTrie<Double> trie;
 
-    Segmenter(HashMap<String, Double> probs) {
-        trie = new AhoCorasickDoubleArrayTrie<Double>();
-        trie.build(probs);
+    public Segmenter(HashMap<String, Double> probs) {
+        this(mkTrie(probs));
     }
 
-    public static int offsetLengthToIndex(int phraseLength, int wordOffset, int wordLength) {
+    public Segmenter(AhoCorasickDoubleArrayTrie<Double> trie) {
+        this.trie = trie;
+    }
+
+    private static AhoCorasickDoubleArrayTrie<Double> mkTrie(HashMap<String, Double> probs) {
+        AhoCorasickDoubleArrayTrie<Double> rv = new AhoCorasickDoubleArrayTrie<Double>();
+        rv.build(probs);
+        return rv;
+    }
+
+    protected static int offsetLengthToIndex(int phraseLength, int wordOffset, int wordLength) {
         // Return the index into the table of probabilities for word lengths at given offsets.
         // eg for "abcd" there are 10 entries in the table, corresponding to the probabilities for:
         // abcd

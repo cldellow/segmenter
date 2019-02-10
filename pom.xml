@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cldellow</groupId>
   <artifactId>segmenter</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.3</version>
   <name>com.cldellow:segmenter</name>
   <url>https://github.com/cldellow/segmenter</url>
   <description>Segment strings into words.</description>
